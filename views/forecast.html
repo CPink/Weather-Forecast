@@ -1,3 +1,17 @@
 <div>
-    <div class="mx-auto">Forecast for {{ city }}</div>
+    <h3 class="mb-3">Forecast for {{ city }}</h3>
+</div>
+<div ng-show="weatherResult">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading text-center">
+                  <h3>{{ weatherResult.dt | date : 'MMM, d, y' }}</h3>
+                </div> 
+                <div class="panel-body text-center">
+                Daytime temperature: {{ convertToFahrenheit(weatherResult.main.temp) }}
+            </div>
+            </div>
+        </div>
+    </div>
 </div>
